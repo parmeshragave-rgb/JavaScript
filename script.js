@@ -1,10 +1,121 @@
-var a="123"
-var c="789"
-var b="456"
+//map
+const mmap=new Map();
+mmap.set(1,"a");
+mmap.set(2,"b");
+mmap.set(3,"c");
+mmap.set(4,"d");
+console.log(mmap);
+console.log(mmap.get(1));
+console.log(mmap.has(1));
+mmap.delete(3);
+console.log(mmap.size)
+ 
+//set
+const s=new Set([1,2,2,2,3,4]);
+console.log(s);
 
-function num(){
-    return a
+//spread
+var arr=[1,2,3,4,5];
+var arr2=[...arr,6,7,8];
+var arr3=[...arr,...arr2];
+var arr4=[...arr3];
+console.log(arr4);
+
+//Template literals
+let a='Rently'
+console.log(`${a} Cbe`);
+
+//Rest
+function rest(...num){
+    console.log(num)
 }
+rest(1,2,3,4,5,6,7,8,9);
 
-var d=num()
-console.log(d)
+const r=(...v) =>{
+    console.log(v)
+}
+r(88,99,77,66,555);
+
+
+//Array Destructuring
+var dsarr=[1,2,3,4,5,6];
+let [x,y,z]=dsarr;
+console.log(x);
+console.log(y);
+console.log(z);
+let [p,,o,...t]=dsarr;
+console.log(p,o,t);
+[x,y]=[y,x];
+console.log(x,y);
+
+
+//Object in Js
+let det={
+    name:"parmesh",
+    age:20
+
+};
+console.log(det);
+
+let obj = new Object();
+obj.name= "Ragav",
+obj.age= 20,
+obj.job= "Developer"
+
+console.log(obj);
+
+
+// Using Dot Notation
+console.log(obj.name);
+
+// Using Bracket Notation
+console.log(obj["age"]);
+
+obj.age = 23;
+console.log(obj);
+
+
+//object Destructuring
+let obj1={
+name1:"abcd",
+add:{
+    country:"India",
+    state:"tn",
+    dt:"cbe"
+    
+}
+}
+let { name1}=obj1;
+let{ add:{ country:v }}=obj1;
+console.log(name1);
+console.log(v)
+
+
+// String manupulations
+let A = 'abde fghi jklmn';
+
+let b = A.slice(0, 5);
+let c = A.slice(6, 9);
+let d = A.slice(10);
+
+
+console.log(b);
+console.log(c);
+console.log(d);
+
+
+
+let str = "sfbf LFNF NfFLDn";
+
+
+let part = str.substring(6, 11);
+
+console.log(part);
+
+
+let strG = "Mind, Power, Soul";
+
+
+let part2 = str.replace("Power", "Space");
+
+console.log(part);

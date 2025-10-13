@@ -1,77 +1,74 @@
 <html>
-    <head>
-        <link rel="script" href="script.js">
-        <title>
-            Js tutorial
-        </title>
-    </head>
+
+<head>
+    <!-- <link rel="script" href="script.js"> -->
+    <title>
+        Js tutorial
+    </title>
+</head>
+
 <body>
-    
 
 
-<center>
-<h1>Guess the number</h1>
 
-<input id="Guess" style="margin: 10px;" onkeyup="key()" type="number" onclick="key()">
-<button onclick="guessnum()"  style="margin-left:10px ;">Check</button>
-<button onclick="del()"  style="margin-left:10px ;">Clear</button><br>
-<br>
-<p style="display: inline;margin-left: 10px;">Score:</p>
-<p id="scr" style="display: inline;">0</p>
-<p id="gs" style="display: block; flex-wrap: wrap; margin-left: 10px;margin: 5px 5px 0px 10px;">Yet to start</p>
-<h3 style="display:inline-block;margin: 2px 5px 5px 10px;">Entered number:</h3>
-<h3 id="no" style="display: inline-block;margin: 2px 5px 5px 10px;">--</h3>
-<hr style="margin: 10px;">
+    <center>
+        <h1>Guess the number</h1>
+
+        <input id="Guess" style="margin: 10px;" onkeyup="key()" type="number" onclick="key()">
+        <button onclick="guessnum()" style="margin-left:10px ;">Check</button>
+        <button onclick="del()" style="margin-left:10px ;">Clear</button><br>
+        <br>
+        <p style="display: inline;margin-left: 10px;">Score:</p>
+        <p id="scr" style="display: inline;">0</p>
+        <p id="gs" style="display: block; flex-wrap: wrap; margin-left: 10px;margin: 5px 5px 0px 10px;">Yet to start</p>
+        <h3 style="display:inline-block;margin: 2px 5px 5px 10px;">Entered number:</h3>
+        <h3 id="no" style="display: inline-block;margin: 2px 5px 5px 10px;">--</h3>
+        <hr style="margin: 10px;">
 
 
-<h1 id="txt">Click a btn</h1>
-<button id="hi" onclick="click1(event)" style="margin-left:10px ;">Hi</button>
-<button id="hello" onclick="click2(event)"  style="margin-left:10px ;">Hello</button>
-<button id="bye" onclick="click3(event)" style="margin-left:10px ;">Bye</button>
-</center>
+        <h1 id="txt">Click a btn</h1>
+        <button id="hi" onclick="clicked(event)" style="margin-left:10px ;">Hi</button>
+        <button id="hello" onclick="clicked(event)" style="margin-left:10px ;">Hello</button>
+        <button id="bye" onclick="clicked(event)" style="margin-left:10px ;">Bye</button>
+    </center>
 </body>
-</html>
-<script>
-    var a=document.getElementById("Guess")
-    var p=document.getElementById("scr")
-    var p2=document.getElementById("gs")
-    var s=0
-    var n=document.getElementById("no")
-    var hi=document.getElementById("hi")
-    var hello=document.getElementById("hello")
-    var bye=document.getElementById("bye")
-    var h1=document.getElementById("txt")
-    function del(){
-        a.value=""
-        n.textContent="--"
-    }
-     function click1(){
-        h1.textContent=hi.textContent
 
-     }
-      function click2(){
-        h1.textContent=hello.textContent
+</html>
+
+
+<script>
+    var a = document.getElementById("Guess")
+    var p = document.getElementById("scr")
+    var p2 = document.getElementById("gs")
+    var s = 0
+    var n = document.getElementById("no")
+    var hi = document.getElementById("hi")
+    var hello = document.getElementById("hello")
+    var bye = document.getElementById("bye")
+    var h1 = document.getElementById("txt")
+    const del = () => {
+        a.value = ""
+        n.textContent = "--"
     }
-     function click3(){
-        h1.textContent=bye.textContent
+
+    function clicked(event) {
+        console.log('$$$$$', event.target)
+        h1.textContent = event.target.textContent
     }
-    /* function click(event){
-        h1.textContent=event.target.textContent
-    }*/
-    function key(){
-         n.textContent=a.value
+
+    const key = () => {
+        n.textContent = a.value
     }
-   
-    function guessnum(){
+    function guessnum() {
         //clr.style.backgroundColor="black"
         //clr.style.color="white"
-        if(a.value==Math.floor(Math.random()*10)){
+        if (a.value == Math.floor(Math.random() * 10)) {
             s++;
-            p.textContent=s
-            p2.textContent="U are Correct"
+            p.textContent = s
+            p2.textContent = "U are Correct"
         }
-        else{
-            p2.textContent="U are Wrong"
+        else {
+            p2.textContent = "U are Wrong"
         }
 
     }
