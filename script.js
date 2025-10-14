@@ -92,30 +92,52 @@ console.log(v)
 
 
 // String manupulations
-let A = 'abde fghi jklmn';
+let A ="                  Delta compression using                     ";
+let b=A.slice(-6,-1)   
 
-let b = A.slice(0, 5);
-let c = A.slice(6, 9);
-let d = A.slice(10);
-
+let k=A.substring(0,0) //treats negative indices as 0
+//let u=A.substr(-7,5)  doubt
 
 console.log(b);
-console.log(c);
-console.log(d);
+console.log(k);
+
+let l= A.replace("Delta","delta");
+console.log(l);
+
+let str="Apple orange grapes grapes apple apple orange";
+let sub=str.replaceAll("apple","APPLE")
+console.log(sub);
+
+let up=A.toUpperCase();
+let lo=A.toLowerCase();
+let loc=A.toLocaleUpperCase(); //doubt
+console.log(up);
+console.log(lo);
+console.log(loc);
 
 
+let con=A.concat("JAvascript")
 
-let str = "sfbf LFNF NfFLDn";
+let trm=A.trim();
+let trms=A.trimStart();
+let trme=A.trimEnd();
 
+console.log(con);
+console.log(trm.length);
+console.log(trms.length);
+console.log(trme.length);
+console.log(A.length);
 
-let part = str.substring(6, 11);
+console.log(A);
 
-console.log(part);
+//Array methods
+// Array mapping
+let ar=[1,4,9,16,25];
+let m=ar.map(i => Math.sqrt(i));
+console.log(m)
+let sr=["APPLE","ORANGE","GRAPE"];
+let srm=sr.map(i => i.toLowerCase());
+let src=sr.map(i => i.concat("-Fruits"));
+console.log(srm)
+console.log(src)
 
-
-let strG = "Mind, Power, Soul";
-
-
-let part2 = str.replace("Power", "Space");
-
-console.log(part);
