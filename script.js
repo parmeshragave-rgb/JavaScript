@@ -95,7 +95,7 @@ console.log(v)
 let A ="                  Delta compression using                     ";
 let b=A.slice(-6,-1)   
 
-let k=A.substring(0,0) //treats negative indices as 0
+let k=A.substring(-1,0) //treats negative indices as 0
 //let u=A.substr(-7,5)  doubt
 
 console.log(b);
@@ -133,11 +133,30 @@ console.log(A);
 //Array methods
 // Array mapping
 let ar=[1,4,9,16,25];
+
 let m=ar.map(i => Math.sqrt(i));
 console.log(m)
+
 let sr=["APPLE","ORANGE","GRAPE"];
 let srm=sr.map(i => i.toLowerCase());
+
 let src=sr.map(i => i.concat("-Fruits"));
 console.log(srm)
 console.log(src)
+
+
+//filter
+let fil=[1,2,3,4,5,6,7,8,9,10];
+let ftr=fil.filter(i => i%2==0)
+console.log(ftr)
+
+//reduce
+let re=[1,2,34,5,6,7]
+let red=re.filter((acc,i) => -1)
+console.log(red)
+
+const maxn = re.reduce((acc, i) => {return Math.max(acc, i)}, -Infinity);
+
+console.log(maxn); 
+
 
