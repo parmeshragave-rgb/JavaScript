@@ -65,10 +65,10 @@ obj.job= "Developer"
 console.log(obj);
 
 
-// Using Dot Notation
+
 console.log(obj.name);
 
-// Using Bracket Notation
+
 console.log(obj["age"]);
 
 obj.age = 23;
@@ -90,6 +90,7 @@ let{ add:{ country:v }}=obj1;
 console.log(name1);
 console.log(v)
 
+//////////////////////////////////////////////////////////////////////////////////////////
 
 // String manupulations
 let A ="                  Delta compression using                     ";
@@ -103,7 +104,6 @@ console.log(k);
 
 let l= A.replace("Delta","delta");
 console.log(l);
-
 let str="Apple orange grapes grapes apple apple orange";
 let sub=str.replaceAll("apple","APPLE")
 console.log(sub);
@@ -152,11 +152,166 @@ console.log(ftr)
 
 //reduce
 let re=[1,2,34,5,6,7]
-let red=re.filter((acc,i) => -1)
+let red=re.reduce((acc,i) => -1)
 console.log(red)
 
-const maxn = re.reduce((acc, i) => {return Math.max(acc, i)}, -Infinity);
+const maxn = re.reduce((acc, i) => Math.max(acc, i), -Infinity);
+const minn = re.reduce((acc, i) => Math.min(acc, i), Infinity);
+const sum=re.reduce((acc,i) => acc+i,0)
 
+
+console.log(sum); 
 console.log(maxn); 
+console.log(minn); 
+
+let td= [[10,20,30],[10,20,30],[10,20,30]]
+console.log(td)
+
+let od=td.reduce((acc,i) => acc.concat(i),[])
+console.log(od)
 
 
+//other array methods
+let arrr=[1,1,1,1,1,1,1,1,1,1,1,1,12];
+let f=arrr.find(i => i>2) //find only first occurence for the given condition
+console.log(f)
+
+let fruits = ['apple', 'banana', 'orange', 'grape'];
+let ff = fruits.find(fruit => fruit.includes('n'));
+console.log(ff);
+
+let fruit="Apple"
+let frin=fruit.includes('n')
+console.log(frin)
+
+let uno=[22,999,33,0,333,-1,0,11]
+let asc=uno.sort()
+uno.pop();          // doubt
+
+console.log(asc)
+console.log(uno)
+
+
+asc.push(1);
+console.log(asc)
+
+uno.unshift(1);
+console.log(uno)
+
+let L = [20, 30, 40, 50];
+L.splice(1, 3);
+L.splice(1, 0, 3, 4, 5);
+console.log(L);
+
+
+let jn=uno.join(" || ");
+console.log(jn)
+
+
+let ustr=uno.toString();
+console.log(ustr)
+
+let rr="1";
+let uu="1"
+let ru=rr+uu
+console.log(ru)
+
+let nr=Number(rr)
+let un=Number(uu)
+let rus=nr+un
+console.log(rus)
+
+
+const a1 = [['1', '2'], ['3', '4', '5',['6'], '7']];
+const a2 = a1.flat(Infinity);
+console.log(a2);
+
+function arithmetic(callback,a,b){
+
+    return callback(a,b);
+
+}
+
+function add(x,y){
+    return x+y;
+}
+
+function minus(x,y){
+    return x-y;
+}
+
+console.log(arithmetic(add,1,3))
+console.log(arithmetic(minus,9,3))
+
+function cback(name,callback){
+    console.log("hii"+name)
+    callback();
+}
+function cg(){
+    console.log("BYE");
+}
+cback("Leo",cg)
+
+
+
+setTimeout( function(){
+    console.log("timeout")//asynchronous function that takes a callback to execute after 2 seconds.
+},2000)
+
+console.log("timein")
+
+
+///bind
+const person={
+    name: "parmesh",
+    msg:function (location,ph_no){
+         console.log("hello " +this.name+location+ph_no);
+    }
+}
+let sy=person.msg;
+let ss=(person.msg).bind(person);
+person.msg(" coimbatore"," 56789");
+ss(" noida"," 123456");
+///call
+sy.call(person," banglore"," 102345 ")
+
+//apply
+sy.apply(person,[" chennai "," 123344 "])
+
+
+//promises
+const pro=new Promise((resolve,reject) =>{
+    let num=4;
+    if(num>2){
+        resolve("num>4")
+    }
+    else{
+        reject("num<4")
+    }
+});
+pro
+    .then((message) => console.log(message)) 
+    .catch((error) => console.error(error));
+
+
+const checknum= new Promise((resolve,reject) => {
+    let num=9;
+    if(num%2==0){
+        resolve("even")
+    }
+    else{
+        reject("odd")
+    }
+
+})
+checknum
+   .then((messege)=>console.log(messege))
+   .catch((error) => console.log(error))
+
+
+
+
+let gr=() => {
+    console.log("hi");
+}
+gr();

@@ -16,8 +16,8 @@
         
 
         <input id="Guess" style="margin: 10px;" onkeyup="key()" type="number" onclick="key()" required>
-        <button onclick="guessnum()" style="margin-left:10px ;">Check</button>
-        <button onclick="del()" style="margin-left:10px ;">Clear</button><br>
+        <button id="guessn" style="margin-left:10px ;">Check</button>
+        <button id="clr"  onclick="del()" style="margin-left:10px ;">Clear</button><br>
         <br>
         <p style="display: inline;margin-left: 10px;">Score:</p>
         <p id="scr" style="display: inline;">0</p>
@@ -47,9 +47,19 @@
     var hello = document.getElementById("hello")
     var bye = document.getElementById("bye")
     var h1 = document.getElementById("txt")
+    var ev=document.getElementById("guessn")
+    var crl=document.getElementById("clr")
+    function evl() {
+        ev.style.backgroundColor="black"
+        ev.style.color="white"
+    }
+
     const del = () => {
         a.value = ""
         n.textContent = "--"
+        s=0;
+            p.textContent = s;
+        crl.removeEventListener("click",evl)
     }
 
     function clicked(event) {
@@ -60,10 +70,9 @@
     const key = () => {
         n.textContent = a.value
     }
-    function guessnum() {
-        //clr.style.backgroundColor="black"
-        //clr.style.color="white"
-        if (a.value == Math.floor(Math.random() * 10)) {
+    document.getElementById("guessn").addEventListener("click", function () {
+        
+     if (a.value == Math.floor(Math.random() * 10)) {
             s++;
             p.textContent = s
             p2.textContent = "U are Correct"
@@ -71,6 +80,8 @@
         else {
             p2.textContent = "U are Wrong"
         }
-
-    }
+});
+    // 
+    ev.addEventListener("click", evl)
+   // 
 </script>
