@@ -1,4 +1,4 @@
-//map
+/*//map
 const mmap=new Map();
 mmap.set(1,"a");
 mmap.set(2,"b");
@@ -150,7 +150,7 @@ let fil=[1,2,3,4,5,6,7,8,9,10];
 let ftr=fil.filter(i => i%2==0)
 console.log(ftr)
 
-//reduce
+reduce
 let re=[1,2,34,5,6,7]
 let red=re.reduce((acc,i) => -1)
 console.log(red)
@@ -309,9 +309,90 @@ checknum
    .catch((error) => console.log(error))
 
 
+//async/await
+const ge = async () => {
+    let y = await "Hello World";
+    console.log(y);
+}
+
+console.log(1);
+ge();
+console.log(2);
 
 
+const aw = async () =>{
+    
+    let kk= await "kjni"
+    console.log(kk)
+}
+console.log("123");
+aw();
+console.log("123");
+
+//setTimeout
+setTimeout(() =>{
+    console.log("hii")
+},2000)
+*/
+//////////////////////////////////////////////////////////////////////////////////////////
 let gr=() => {
     console.log("hi");
 }
 gr();
+
+let arm=[1,2,3,4,5,6,7,8,9,12,2,3,45]
+let mapp=arm.map(i => i*2)
+console.log(mapp)
+
+
+let fil=arm.filter(i => i%3==0)
+console.log(fil)
+
+let rdu=arm.reduce((acc,i) => Math.max(acc,i),-Infinity)
+console.log(rdu)
+
+function start(callback,a,b){
+    console.log("started");
+    callback(a,b);
+}
+function add(x,y){
+    console.log(x+y);
+}
+start(add,1,2);
+
+
+const promise=new Promise((resolve,reject) => {
+    let num=7
+    if(num%2==0){
+        resolve("even")
+    }
+    else{
+        reject("odd")
+    }
+})
+
+promise
+.then((messege) => console.log(messege))
+.catch((error) => console.log(error))
+
+
+const fun = async () =>{
+    let sdd=await "helloworld";
+    console.log(sdd);
+}
+console.log("async")
+fun();
+console.log("promise")
+
+
+const obj={
+    name:"ragav",
+    greet: ()=>{
+          console.log("hello "+this.name);
+    }
+       
+    }
+let cl=(obj.greet).bind(obj);
+cl();
+
+
