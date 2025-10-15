@@ -335,7 +335,7 @@ setTimeout(() =>{
 },2000)
 */
 //////////////////////////////////////////////////////////////////////////////////////////
-let gr=() => {
+/*let gr=() => {
     console.log("hi");
 }
 gr();
@@ -408,8 +408,57 @@ Promise.resolve().then(() => {
     console.log("Promise Resolved"); //microtaskque
 });
 
-console.log("End"); //call stak
+console.log("End");*/ //call stak
 //The event loop continuously checks the call stack.
 //If the call stack is empty, it first checks the microtask queue. It processes all microtasks in the queue until it's empty.
 // After the microtask queue is empty, the event loop then checks the callback queue. It takes the first callback from the callback queue and pushes it onto the call stack for execution. This process repeats. 
+
+
+/*function oddeven(x){
+    return new Promise((resolve,reject) => {
+        setTimeout(() =>{
+if(x%2==0){
+           resolve("Number is Even")
+        }
+
+        else{
+            reject("Number is odd")
+        }
+        },1000)
+        
+    })
+}
+async function erhandle(a){
+    try{
+const p=await oddeven(a);
+    console.log(p);
+    }
+    catch(error){
+        console.error("error ocured:",error)
+    }
+    
+}
+erhandle(5);
+*/
+
+/*const obj1 ={
+    namee:"ragav",
+    greets(bye,a) {
+        console.log("Hello "+this.namee+bye+a);
+    }
+}
+let bnd=(obj1.greets)
+//bnd=bnd.bind(obj1)
+//bnd();
+bnd.call(obj1," bye ",1);
+bnd.apply(obj1,[" bye ",1]);*/
+
+
+
+/*let arr=[1,2,3,4,5,6]
+let maparr=arr.map(i =>1*2)
+let filarr=arr.filter(i => i%2==0)
+let redarr=arr.reduce((acc,i) => acc+i,0)
+console.log(maparr,filarr,redarr)*/
+
 

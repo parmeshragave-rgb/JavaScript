@@ -1,8 +1,13 @@
-let moment=require('moment')
-console.log(moment().date(10).toString())
-console.log(moment().date().toString())
+const moment = require('moment-timezone');
 
-console.log(moment().format('DD|MM|YYYY'))
-let moment1 = moment().year(2019).month(6).date(5);
-let date10=moment1.date(-10);
-console.log(date10.toString())
+let crnttme=moment().tz("Asia/Kolkata")
+console.log("Current time: ",crnttme.format("hh mm ss A z"))
+console.log(crnttme.startOf("month").format("dddd-MMMM Do yyyy a z Z  hh=mm=ss"))
+//console.log(crnttme.endOf("month").format("dddd -MMMM Do yyyy a z Z"))
+console.log(crnttme.add(5,"days").format("dddd -MMMM Do yyyy a z Z"))
+
+/*let antarictic=crnttme.clone().tz("Antarctica/South_Pole").format("hh:mm:ss A z")
+console.log("Converted time: ",antarictic)
+console.log(moment.tz.names());
+let now=moment();
+console.log(now.toString())*/
