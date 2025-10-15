@@ -396,3 +396,20 @@ let cl=(obj.greet).bind(obj);
 cl();
 
 
+
+//Event looping
+console.log("Start");//---Call stack
+
+setTimeout(() => {
+    console.log("setTimeout Callback");//calkback que
+}, 0);
+
+Promise.resolve().then(() => {
+    console.log("Promise Resolved"); //microtaskque
+});
+
+console.log("End"); //call stak
+//The event loop continuously checks the call stack.
+//If the call stack is empty, it first checks the microtask queue. It processes all microtasks in the queue until it's empty.
+// After the microtask queue is empty, the event loop then checks the callback queue. It takes the first callback from the callback queue and pushes it onto the call stack for execution. This process repeats. 
+
